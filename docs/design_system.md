@@ -1,0 +1,46 @@
+# Wordle Game preview
+
+![Example Image](assets/wordleexample.png)
+## Rules
+1. **Objective:** Guess the secret word.
+2. The secret word is a 5-letter word.
+3. You have 6 attempts to guess the correct word.
+4. After each guess, you will receive feedback:
+   - A <span style="color: green; font-weight: bold;">green square</span> means a correct letter in the correct position.
+   - A <span style="color: yellow; font-weight: bold;">yellow square</span> means a correct letter in the wrong position.
+   - A <span style="color: gray; font-weight: bold;">gray square</span> means an incorrect letter.
+## Fonts
+| Font Name     | Provider          | Description                    |
+| ------------- | ----------------- | ------------------------------ |
+| Open Sans     | Google Fonts      | Friendly sans-serif            |
+| Lato          | Google Fonts      | Modern sans-serif              |
+## Components
+ The game will be played on a 6x6 grid like this:
+
+![Example grid](assets/grid.png)
+
+In the case of a good answer:
+
+![Example correct answer](assets/green.png)
+
+In the case of a good letter but in the wrong place:
+
+![Example corect but wrong place](assets/yellow.png)
+
+if the letter is not in the word:
+
+![Example not here](assets/grey.png)
+
+## Guesses example
+- **Guess 1:** [ ] [ ] [ ] [ ] [ ]
+- **Guess 2:** [X] [X] [X] [X] [X]
+- **Guess 3:** [X] [Y] [X] [X] [X]
+- **Guess 4:** [Z] [X] [Y] [Y] [X]
+- **Guess 5:** [Z] [X] [Z] [Z] [X]
+- **Guess 6:** [Z] [Z] [Z] [Z] [Z]
+
+## Legend
+- [ ]: Placeholder for a letter (empty square)
+- [X]: Incorrect letter
+- [Y]: Correct letter in the wrong position
+- [Z]: Correct letter in the correct position
