@@ -22,7 +22,7 @@
 
 In the case of a good answer:
 
-![Example correct answer](assets/green.png)
+![Example correct answer](assets/Green.png)
 
 In the case of a good letter but in the wrong place:
 
@@ -30,7 +30,7 @@ In the case of a good letter but in the wrong place:
 
 if the letter is not in the word:
 
-![Example not here](assets/grey.png)
+![Example not here](assets/Grey.png)
 
 ## Guesses example
 - **Guess 1:** [ ] [ ] [ ] [ ] [ ]
