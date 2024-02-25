@@ -12,9 +12,9 @@ window.onload = function(){
     initialize();
 }
 function initialize() {
+    // Créer le plateau de jeu avec des cases vides
     for (let r = 0; r < height; r++) {
         for (let c = 0; c < width; c++) {
-            // <span id="0-0" class="tile">P</span>
             let tile = document.createElement("span");
             tile.id = r.toString() + "-" + c.toString();
             tile.classList.add("tile");
@@ -22,6 +22,7 @@ function initialize() {
             document.getElementById("board").appendChild(tile);
         }
     }
+    // Créer le clavier avec des touches
     let keyboard = [
         ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
         ["A", "S", "D", "F", "G", "H", "J", "K", "L", " "],
@@ -56,6 +57,7 @@ function initialize() {
         }
         document.body.appendChild(keyboardRow);
     }
+    // Gérer les événements du clavier
     document.addEventListener("keyup", (e) => {
         processInput(e);
     })
@@ -67,6 +69,7 @@ function processKey() {
 function processInput(e) {
     if (gameOver) return; 
     if ("KeyA" <= e.code && e.code <= "KeyZ") {
+        // Remplir la case avec la lettre si elle est vide
         if (col < width) {
             let currTile = document.getElementById(row.toString() + '-' + col.toString());
             if (currTile.innerText == "") {
@@ -76,6 +79,7 @@ function processInput(e) {
         }
     }
     else if (e.code == "Backspace") {
+        // Effacer la lettre précédente si elle existe
         if (0 < col && col <= width) {
             col -=1;
         }
@@ -84,9 +88,10 @@ function processInput(e) {
     }
 
     else if (e.code == "Enter") {
+        // Mettre à jour le jeu
         update();
     }
-
+    // Vérifier si le jeu est terminé après chaque essai
     if (!gameOver && row == height) {
         gameOver = true;
         document.getElementById("answer").innerText = word;
@@ -95,6 +100,7 @@ function processInput(e) {
 function update() {
     let guess = "";
     document.getElementById("answer").innerText = "";
+    // Construire le mot à partir des lettres entrées
     for (let c = 0; c < width; c++) {
         let currTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currTile.innerText;
@@ -102,12 +108,14 @@ function update() {
     }
     guess = guess.toLowerCase(); 
     console.log(guess);
+    // Vérifier si le mot est dans la liste des mots à deviner
     if (!guessList.includes(guess)) {
         document.getElementById("answer").innerText = "Not in word list";
         return;
     }
     let correct = 0;
     let letterCount = {}; 
+    // Compter le nombre de chaque lettre dans le mot à deviner
     for (let i = 0; i < word.length; i++) {
         let letter = word[i];
 
@@ -119,9 +127,11 @@ function update() {
         }
     }
     console.log(letterCount);
+    // Comparer les lettres entrées avec le mot à deviner
     for (let c = 0; c < width; c++) {
         let currTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currTile.innerText;
+         // Si la lettre est correcte, la marquer comme correcte et mettre à jour le compteur
         if (word[c] == letter) {
             currTile.classList.add("correct");
             let keyTile = document.getElementById("Key" + letter);
@@ -135,10 +145,11 @@ function update() {
         }
     }
     console.log(letterCount);
+    // Marquer les lettres incorrectes et absentes
     for (let c = 0; c < width; c++) {
         let currTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currTile.innerText;
-        if (!currTile.classList.contains("correct")) {
+        if (!currTile.classList.contains("correct")) { 
             if (word.includes(letter) && letterCount[letter] > 0) {
                 currTile.classList.add("present");
                 let keyTile = document.getElementById("Key" + letter);
