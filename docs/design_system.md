@@ -15,6 +15,7 @@
 | ------------- | ----------------- | ------------------------------ |
 | Open Sans     | Google Fonts      | Friendly sans-serif            |
 | Lato          | Google Fonts      | Modern sans-serif              |
+
 ## Components
  The game will be played on a 6x6 grid like this:
 

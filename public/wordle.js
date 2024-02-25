@@ -9,9 +9,9 @@ guessList = guessList.concat(wordList);
 var word = wordList[Math.floor(Math.random()*wordList.length)].toUpperCase();
 console.log(word);
 window.onload = function(){
-    intialize();
+    initialize();
 }
-function intialize() {
+function initialize() {
     for (let r = 0; r < height; r++) {
         for (let c = 0; c < width; c++) {
             // <span id="0-0" class="tile">P</span>
