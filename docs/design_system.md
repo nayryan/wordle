@@ -9,6 +9,7 @@
    - A <span style="color: green; font-weight: bold;">green square</span> means a correct letter in the correct position.
    - A <span style="color: yellow; font-weight: bold;">yellow square</span> means a correct letter in the wrong position.
    - A <span style="color: gray; font-weight: bold;">gray square</span> means an incorrect letter.
+5. there's a list of word that you can use so can you cannot type in random stuff
 ## Fonts
 | Font Name     | Provider          | Description                    |
 | ------------- | ----------------- | ------------------------------ |
