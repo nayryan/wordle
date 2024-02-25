@@ -15,8 +15,21 @@ function intialize(){
             let tile = document.createElement("span");
             tile.id = r.toString() + "-" + c.toString();
             tile.classList.add("tile");
-            tile.innerText = "P";
+            tile.innerText = "";
             document.getElementById("board").appendChild(tile);
         }
     }
+    document.addEventListener("keyup", (e) => {
+        if (gameOver) return;
+        if ("KeyA" <= e.code && e.code <= "KeyZ"){
+            if (col < width){
+                let currTile =document.getElementById(row.toString() + '-' + col.toString());
+                if (currTile.innerText == ""){
+                    currTile.innerText = e.code[3]
+                    col += 1;
+                }
+            }
+
+        }
+    });
 }

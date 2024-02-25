@@ -1,4 +1,4 @@
 Ryan Harrabi
-wordle
+Jeux wordle
 
 [Système de design](/docs/design_system.md)
