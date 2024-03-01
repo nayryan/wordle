@@ -46,3 +46,22 @@ if the letter is not in the word:
 - [X]: Incorrect letter
 - [Y]: Correct letter in the wrong position
 - [Z]: Correct letter in the correct position
+
+## Here's an actual example
+
+![Example](assets/exampleGame.png)
+
+If you win, all the square will be green. We can see that the yellow square we're right letters but at the wrong place. Grey squares we're letters not in the word.
+
+## Example where you lose
+
+![Example](assets/wordleLose.png)
+
+# when you enter an invalid word
+
+![Example](assets/invalid.png)
+
+That's what happens when you enter an invalid word.
+
+
+
