@@ -122,33 +122,3 @@ function update() {
     row += 1;
     col = 0;
 }
-
-// Exemple d'appel AJAX pour vérifier un mot
-function checkWord(word) {
-    fetch('api.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: 'word=' + encodeURIComponent(word),
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Gérez la réponse JSON pour mettre à jour l'état du jeu et l'interface utilisateur
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
-
-// Exemple d'appel AJAX pour récupérer le leaderboard
-function getLeaderboard() {
-    fetch('api.php?leaderboard')
-    .then(response => response.json())
-    .then(data => {
-        // Gérez la réponse JSON pour afficher le leaderboard dans l'interface utilisateur
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
