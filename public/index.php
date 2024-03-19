@@ -9,21 +9,16 @@
 <body>
 
 <div id="game">
-    <!-- Game content goes here -->
     <h1>Wordle Game</h1>
     <div id="game-board">
-        <!-- Game board elements -->
     </div>
     <div id="keyboard">
-        <!-- Keyboard elements -->
     </div>
     <div id="game-status">
-        <!-- Game status display -->
     </div>
 </div>
 
 <div id="leaderboard">
-    <!-- Leaderboard content goes here -->
     <h2>Leaderboard</h2>
     <ol>
         <?php
@@ -44,10 +39,5 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    // JavaScript code for Wordle game
-    // This script will handle game logic
-</script>
-
 </body>
 </html>
