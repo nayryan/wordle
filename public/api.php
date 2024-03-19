@@ -29,14 +29,11 @@ function generateNewWord() {
 
 // Fonction pour traiter une tentative de mot
 function processAttempt($guess) {
-    // Ici, vous ajouteriez le mot à la liste des tentatives et vérifieriez s'il est correct
-    // C'est une simplification
     if (strtoupper($guess) === $_SESSION['gameState']['word']) {
         $_SESSION['gameState']['victory'] = true;
         $_SESSION['gameState']['gameOver'] = true;
-        // Ajoutez le score
         $_SESSION['scores'][] = count($_SESSION['gameState']['attempts']) + 1;
-        arsort($_SESSION['scores']); // Triez les scores en ordre décroissant
+        arsort($_SESSION['scores']); 
     } else {
         $_SESSION['gameState']['attempts'][] = $guess;
         if (count($_SESSION['gameState']['attempts']) >= 6) {
