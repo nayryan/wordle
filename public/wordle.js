@@ -122,3 +122,21 @@ function update() {
     row += 1;
     col = 0;
 }
+
+function updateLeaderboard() {
+    fetch('path/to/leaderboard/api')
+        .then(response => response.json())
+        .then(data => {
+            const leaderboardElement = document.getElementById('leaderboard-list');
+            leaderboardElement.innerHTML = ''; // Vider la liste actuelle
+            data.forEach(entry => {
+                const li = document.createElement('li');
+                li.textContent = `${entry.name}: ${entry.score}`;
+                leaderboardElement.appendChild(li);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+// Appeler cette fonction au chargement de la page et après chaque partie terminée
+updateLeaderboard();
